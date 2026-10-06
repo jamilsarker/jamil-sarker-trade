@@ -37,3 +37,7 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
+
+# Contest sample data (don't push PDFs)
+sample-pack/documents/*.pdf
+sample-pack/documents/*.png

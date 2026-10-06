@@ -93,7 +93,34 @@ body {
 
 .no-data p {
   color: #666;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.instructions {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.instructions h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.instructions ol {
+  margin-left: 1.5rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.instructions li {
+  margin-bottom: 0.5rem;
 }
 
 /* Sections */

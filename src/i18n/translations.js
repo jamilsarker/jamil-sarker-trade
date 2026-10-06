@@ -86,6 +86,15 @@ export const translations = {
     // General
     loading: 'Loading...',
     noData: 'No data loaded. Please load a requirements.json file to begin.',
+    
+    // Instructions
+    howToUse: 'How to use this app:',
+    instruction1: 'Load your requirements.json file',
+    instruction2: 'Upload all required PDF documents',
+    instruction3: 'Match each PDF to its corresponding requirement',
+    instruction4: 'Enter expiry dates for documents that need them',
+    instruction5: 'Review the status of all documents',
+    instruction6: 'Generate and download the complete package',
   },
   bn: {
     // Header
@@ -174,6 +183,15 @@ export const translations = {
     // General
     loading: 'লোড হচ্ছে...',
     noData: 'কোনো তথ্য লোড করা হয়নি। শুরু করতে একটি requirements.json ফাইল লোড করুন।',
+    
+    // Instructions
+    howToUse: 'এই অ্যাপটি কীভাবে ব্যবহার করবেন:',
+    instruction1: 'আপনার requirements.json ফাইল লোড করুন',
+    instruction2: 'সমস্ত প্রয়োজনীয় PDF নথি আপলোড করুন',
+    instruction3: 'প্রতিটি PDF তার সংশ্লিষ্ট প্রয়োজনীয়তার সাথে মিলান',
+    instruction4: 'যে নথিগুলির প্রয়োজন তাদের জন্য মেয়াদ শেষের তারিখ লিখুন',
+    instruction5: 'সমস্ত নথির অবস্থা পর্যালোচনা করুন',
+    instruction6: 'সম্পূর্ণ প্যাকেজ তৈরি এবং ডাউনলোড করুন',
   },
 };
 

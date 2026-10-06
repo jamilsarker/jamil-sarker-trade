@@ -210,6 +210,17 @@ function App() {
           <div className="no-data">
             <h2>{t('step1')}</h2>
             <p>{t('noData')}</p>
+            <div className="instructions">
+              <h3>{t('howToUse')}</h3>
+              <ol>
+                <li>{t('instruction1')}</li>
+                <li>{t('instruction2')}</li>
+                <li>{t('instruction3')}</li>
+                <li>{t('instruction4')}</li>
+                <li>{t('instruction5')}</li>
+                <li>{t('instruction6')}</li>
+              </ol>
+            </div>
             <label className="btn btn-primary">
               {t('loadJSON')}
               <input

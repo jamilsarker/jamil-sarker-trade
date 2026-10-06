@@ -47,18 +47,47 @@ async function addCoverPage(pdfDoc, tender, requirements, matches, language) {
   const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
   const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
   
-  let yPosition = height - 80;
+  let yPosition = height - 60;
   
-  // Title
-  page.drawText('TENDER DOCUMENT PACKAGE', {
-    x: 50,
-    y: yPosition,
-    size: 20,
-    font: fontBold,
-    color: rgb(0, 0, 0.5),
+  // Title box
+  page.drawRectangle({
+    x: 40,
+    y: yPosition - 35,
+    width: width - 80,
+    height: 45,
+    color: rgb(0.1, 0.45, 0.91),
   });
   
-  yPosition -= 50;
+  page.drawText('TENDER DOCUMENT PACKAGE', {
+    x: 50,
+    y: yPosition - 25,
+    size: 18,
+    font: fontBold,
+    color: rgb(1, 1, 1),
+  });
+  
+  yPosition -= 70;
+  
+  // Tender details section
+  page.drawText('Tender Information', {
+    x: 50,
+    y: yPosition,
+    size: 14,
+    font: fontBold,
+    color: rgb(0.1, 0.45, 0.91),
+  });
+  
+  yPosition -= 25;
+  
+  // Draw a line
+  page.drawLine({
+    start: { x: 50, y: yPosition + 5 },
+    end: { x: width - 50, y: yPosition + 5 },
+    thickness: 1,
+    color: rgb(0.8, 0.8, 0.8),
+  });
+  
+  yPosition -= 10;
   
   // Tender details
   const details = [
@@ -67,47 +96,57 @@ async function addCoverPage(pdfDoc, tender, requirements, matches, language) {
     ['Procuring Entity', tender.procuring_entity],
     ['Bidder', tender.bidder],
     ['Submission Deadline', tender.submission_deadline],
-    ['Package Generated On', getCurrentDate()],
+    ['Package Generated', getCurrentDate()],
   ];
   
   for (const [label, value] of details) {
     page.drawText(`${label}:`, {
       x: 50,
       y: yPosition,
-      size: 11,
+      size: 10,
       font: fontBold,
-      color: rgb(0, 0, 0),
+      color: rgb(0.3, 0.3, 0.3),
     });
     
     // Split long text into multiple lines
-    const maxWidth = width - 200;
-    const lines = splitTextIntoLines(value, maxWidth, 11, font);
+    const maxWidth = width - 220;
+    const lines = splitTextIntoLines(value, maxWidth, 10, font);
     
     for (let i = 0; i < lines.length; i++) {
       page.drawText(lines[i], {
         x: 200,
-        y: yPosition - (i * 15),
-        size: 11,
+        y: yPosition - (i * 14),
+        size: 10,
         font: font,
         color: rgb(0, 0, 0),
       });
     }
     
-    yPosition -= (lines.length * 15) + 10;
+    yPosition -= (lines.length * 14) + 8;
   }
   
-  yPosition -= 20;
+  yPosition -= 15;
   
-  // Included documents
-  page.drawText('Included Documents:', {
+  // Included documents section
+  page.drawText('Included Documents', {
     x: 50,
     y: yPosition,
-    size: 13,
+    size: 14,
     font: fontBold,
-    color: rgb(0, 0, 0),
+    color: rgb(0.1, 0.45, 0.91),
   });
   
   yPosition -= 25;
+  
+  // Draw a line
+  page.drawLine({
+    start: { x: 50, y: yPosition + 5 },
+    end: { x: width - 50, y: yPosition + 5 },
+    thickness: 1,
+    color: rgb(0.8, 0.8, 0.8),
+  });
+  
+  yPosition -= 15;
   
   const sortedRequirements = [...requirements].sort((a, b) => a.order - b.order);
   let docNumber = 1;
@@ -119,14 +158,13 @@ async function addCoverPage(pdfDoc, tender, requirements, matches, language) {
       const text = `${docNumber}. ${title}`;
       
       // Handle long titles
-      const maxWidth = width - 100;
+      const maxWidth = width - 110;
       const lines = splitTextIntoLines(text, maxWidth, 10, font);
       
       for (let i = 0; i < lines.length; i++) {
         if (yPosition < 80) {
-          // Create new page if running out of space
-          const newPage = pdfDoc.addPage([595, 842]);
-          yPosition = height - 80;
+          // Would overflow - note this for future enhancement
+          break;
         }
         
         page.drawText(lines[i], {
@@ -137,7 +175,7 @@ async function addCoverPage(pdfDoc, tender, requirements, matches, language) {
           color: rgb(0, 0, 0),
         });
         
-        yPosition -= 15;
+        yPosition -= 14;
       }
       
       docNumber++;

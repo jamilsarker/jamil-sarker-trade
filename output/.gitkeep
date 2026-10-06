@@ -1,2 +1,12 @@
-# Place your generated PDF package here:
-# <tender_id>_Package.pdf
+# Generated PDF package will be saved here
+# 
+# To generate:
+# 1. Run: npm run dev
+# 2. Load: sample-pack/requirements.json
+# 3. Upload PDFs from: sample-pack/documents/
+# 4. Match files and enter expiry dates
+# 5. Click "Generate Package"
+# 6. Download and save here as: T-2026-0417_Package.pdf
+#
+# Note: The actual PDF should be generated through the app
+# This ensures it follows all contest requirements correctly

@@ -1,2 +1,18 @@
-# Place at least one screenshot showing document statuses here
-# Required for contest submission
+# Screenshots required for contest submission
+# 
+# Take at least one screenshot showing:
+# - Document requirements list with different status types
+# - Examples: Missing (red), OK (green), Expired (red), Not provided (yellow)
+# - Should clearly show the status column
+#
+# To capture:
+# 1. Run the app: npm run dev
+# 2. Load requirements and upload files
+# 3. Navigate to the requirements status table
+# 4. Take screenshot (Windows: Win+Shift+S)
+# 5. Save here as: status-view.png or similar name
+#
+# Recommended screenshots:
+# - status-view.png (main requirements table)
+# - duplicate-detection.png (optional - showing duplicate badge)
+# - blocking-issues.png (optional - showing why generate is disabled)

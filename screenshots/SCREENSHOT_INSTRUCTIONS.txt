@@ -1,0 +1,12 @@
+Screenshot Requirements
+=======================
+
+Please capture at least one screenshot showing:
+- The requirements table with status column
+- Different status types visible (OK, Missing, Expired, etc.)
+
+Recommended filename: status-view.png
+
+This ensures judges can verify the app correctly calculates all status types.
+
+This placeholder maintains folder structure for git.

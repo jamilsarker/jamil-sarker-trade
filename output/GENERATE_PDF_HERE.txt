@@ -1,0 +1,14 @@
+Generated PDF Package Location
+================================
+
+The final PDF package should be generated through the app and saved here as:
+T-2026-0417_Package.pdf
+
+To generate:
+1. npm run dev
+2. Load sample-pack/requirements.json
+3. Upload PDFs from sample-pack/documents/
+4. Match files and generate package
+5. Save here
+
+This placeholder ensures the folder structure is correct.
